@@ -240,8 +240,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             textHolder('Name: ', customer.name),
                             textHolder('Email: ', customer.emailId),
-                            textHolder(
-                                'Phone Number: ', customer.phoneNumber),
+                            textHolder('Phone Number: ', customer.phoneNumber),
                             textHolder('Date: ', customer.date),
                             textHolder('Time: ', customer.time),
                             Container(
@@ -250,7 +249,7 @@ class _HomePageState extends State<HomePage> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   InkWell(
-                                    onTap: () => _edit(context,customer),
+                                    onTap: () => _edit(context, customer),
                                     child: Padding(
                                       padding: EdgeInsets.all(8),
                                       child: Icon(
@@ -297,5 +296,4 @@ class _HomePageState extends State<HomePage> {
       appBar: _appBar(context),
     );
   }
-
 }

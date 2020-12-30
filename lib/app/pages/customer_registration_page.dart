@@ -64,11 +64,6 @@ class _CustomerRegistrationPageState extends State<CustomerRegistrationPage> {
       final _snackBar = SnackBar(content: Text('Email can\'t be empty'));
       _scaffoldKey.currentState.showSnackBar(_snackBar);
     } else {
-      String date = _pickedDate.day.toString() +
-          '-' +
-          _pickedDate.month.toString() +
-          '-' +
-          _pickedDate.year.toString();
       String hour = _time.hour.toString();
       String minute;
       if (_time.minute == 0) {
@@ -79,6 +74,19 @@ class _CustomerRegistrationPageState extends State<CustomerRegistrationPage> {
         minute = _time.minute.toString();
       }
       String time = hour + ':' + minute + ' hrs';
+      String year = _pickedDate.year.toString();
+      String month,day;
+      if(_pickedDate.month <10){
+        month = '0' + _pickedDate.month.toString();
+      }else{
+        month = _pickedDate.month.toString();
+      }
+      if(_pickedDate.day < 10){
+        day = '0' + _pickedDate.day.toString();
+      }else{
+        day = _pickedDate.day.toString();
+      }
+      String date = day + '-' + month + '-' + year;
       Customer customer = Customer(
           name: _name,
           phoneNumber: _phoneNumber,
